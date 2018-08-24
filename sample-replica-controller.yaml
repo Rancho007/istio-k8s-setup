@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-boot
+spec:
+  replicas : 10
+  selector:
+    app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        name: hello-boot
+        image: urvishparikh/spring-boot-docker-test
+        ports:
+          containerPort: 8080
+		  
